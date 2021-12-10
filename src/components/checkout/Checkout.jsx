@@ -14,6 +14,8 @@ import {
 
 // components imports
 import CheckoutItem from "../checkout-item/CheckoutItem";
+import StripeButton from "../stripe-button/StripeButton";
+
 
 function Checkout({ cartItems, total }) {
   return (
@@ -41,6 +43,12 @@ function Checkout({ cartItems, total }) {
       <div className="total">
         <span>TOTAL:{total}€</span>
       </div>
+      <div className="test-warning">
+      *Please use the following test credit card for payments*
+      <br/>
+      4242 4242 4242 4242 - Exp: 01/20 - cvv: 123
+      </div>
+      <StripeButton price={total}/>
     </div>
   );
 }
