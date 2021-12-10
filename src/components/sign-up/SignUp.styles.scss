@@ -1,9 +1,20 @@
-.sign-up {
-    display: flex;
-    flex-direction: column;
-    width: 360px;
-
-    .title {
-        margin: 10px 0;
+@media screen and (max-width: 600px) {
+    .sign-up {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10vh;
+        .title {
+            margin: 10px 0;
+        }
+    }
+}
+@media screen and (min-width: 601px) {
+    .sign-up {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30px;
+        .title {
+            margin: 10px 0;
+        }
     }
 }

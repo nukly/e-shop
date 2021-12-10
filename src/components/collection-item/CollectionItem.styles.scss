@@ -1,11 +1,12 @@
 
 @media screen and (max-width:600px) {
   .collection-item {
-    width: 23%;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     height: 150px;
     align-items: center;
+    align-content: center;
     position: relative;
   
     .image {
@@ -57,7 +58,7 @@
 
 @media screen and (min-width: 601px) {
   .collection-item {
-    width: 22%;
+    width: 22vw;
     display: flex;
     flex-direction: column;
     height: 350px;
