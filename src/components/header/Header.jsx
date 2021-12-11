@@ -17,18 +17,18 @@ function Header({ currentUser, hidden }) {
         <Logo className="logo"></Logo>
       </Link>
       <div className="options">
-        <Link to="/shop" className="option">
+        <Link to="/shop" className="option1">
           Shop
         </Link>
         <Link to="/contact" className="option">
           Contact
         </Link>
         {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+          <div className="option2" onClick={() => auth.signOut()}>
             Sign Out
           </div>
         ) : (
-          <Link className="option" to="/signin">
+          <Link className="option2" to="/signin">
             Sign in
           </Link>
         )}
