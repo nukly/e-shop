@@ -1,14 +1,15 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     .sign-in-and-sign-up {
         width: 50vw;
         display: grid;
         grid-template-columns: 1fr;
         margin: 30px 0;
+        font-size: smaller;
     }
 }
 
 
-@media screen and (min-width:601px){
+@media screen and (min-width:768px){
     .sign-in-and-sign-up {
         width: 80vw;
         display: grid;

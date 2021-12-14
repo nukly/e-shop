@@ -1,8 +1,6 @@
 import React from "react";
-import "./Header.styles.scss";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { ReactComponent as Logo } from "../assets/crown.svg";
+import Logo from "../../logo.png";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../cart-icon/CartIcon";
 import CartDropdown from "../cart-dropdown/CartDropdown";
@@ -10,32 +8,41 @@ import { createStructuredSelector } from "reselect";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 
+import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink, Option1Link,  OptionHover } from "./header.styles";
+
+
 function Header({ currentUser, hidden }) {
   return (
-    <div className="header">
-      <Link to="/" className="logo-container">
-        <Logo className="logo"></Logo>
-      </Link>
-      <div className="options">
-        <Link to="/shop" className="option1">
-          Shop
-        </Link>
-        <Link to="/contact" className="option">
+    <HeaderContainer>
+      <LogoContainer to="/">
+        <img src={Logo} alt="logo"></img>
+      </LogoContainer>
+      <OptionsContainer>
+        <OptionHover>
+        <Option1Link to="/shop">
+            Shop
+        </Option1Link>
+        </OptionHover>
+        <OptionHover>
+        <OptionLink to="/contact">
           Contact
-        </Link>
+        </OptionLink>
+        </OptionHover>
+        <OptionHover>
         {currentUser ? (
-          <div className="option2" onClick={() => auth.signOut()}>
+          <OptionLink to="/" onClick={() => auth.signOut()}>
             Sign Out
-          </div>
+          </OptionLink>
         ) : (
-          <Link className="option2" to="/signin">
+          <OptionLink to="/signin">
             Sign in
-          </Link>
+          </OptionLink>
         )}
+        </OptionHover>
         <CartIcon />
-      </div>
+      </OptionsContainer>
       {hidden ? null : <CartDropdown />}
-    </div>
+    </HeaderContainer>
   );
 }
 
